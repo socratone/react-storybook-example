@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Option from './stories/forms/selects/Option';
+import Select from './stories/forms/selects/Select';
 
 function App() {
+  const [value, setValue] = useState('');
+
+  const handleChange = (value: string) => {
+    setValue(value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Select
+        value={value}
+        onChange={handleChange}
+        placeholder="값을 선택하세요."
+        width={300}
+      >
+        <Option value="1">자바스크립트</Option>
+        <Option value="2">파이썬</Option>
+        <Option value="3">코틀린</Option>
+      </Select>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+`;
 
 export default App;
