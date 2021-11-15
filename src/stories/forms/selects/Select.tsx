@@ -77,8 +77,6 @@ const Select = ({
           {!open && <DownArrowIcon fill="grey" />}
         </SelectContainer>
 
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-
         {open && (
           <Dropdown>
             {children.map((child) => (
@@ -93,6 +91,8 @@ const Select = ({
           </Dropdown>
         )}
       </Container>
+
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
 
       {open && <Background onClick={handleClickBackground} />}
     </>
