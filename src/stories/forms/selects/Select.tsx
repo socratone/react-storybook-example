@@ -9,6 +9,7 @@ type SelectProps = {
   placeholder?: string;
   onChange: (value: string) => void;
   error?: boolean;
+  errorMessage?: string;
   disabled?: boolean;
   fullWidth?: boolean;
   width?: number;
@@ -20,6 +21,7 @@ const Select = ({
   placeholder,
   width = 200,
   error,
+  errorMessage,
   disabled,
   fullWidth,
   children,
@@ -74,6 +76,8 @@ const Select = ({
           {open && <UpArrowIcon fill="grey" />}
           {!open && <DownArrowIcon fill="grey" />}
         </SelectContainer>
+
+        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
 
         {open && (
           <Dropdown>
@@ -144,6 +148,12 @@ const SelectContainer = styled.div`
   &:active {
     background: #e9e9e9;
   }
+`;
+
+const ErrorMessage = styled.div`
+  margin-top: 5px;
+  color: red;
+  font-size: 14px;
 `;
 
 const DownArrowIcon = styled(ArrowIcon)`

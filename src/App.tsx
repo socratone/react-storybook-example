@@ -33,6 +33,7 @@ function App() {
           placeholder="값을 선택하세요."
           width={300}
           error
+          errorMessage="필수 입력 값입니다."
         >
           <Option value="1">자바스크립트</Option>
           <Option value="2">파이썬</Option>
