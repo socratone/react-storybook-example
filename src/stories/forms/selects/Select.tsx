@@ -9,6 +9,7 @@ type SelectProps = {
   placeholder?: string;
   onChange: (value: string) => void;
   error?: boolean;
+  disabled?: boolean;
   fullWidth?: boolean;
   width?: number;
 };
@@ -19,6 +20,7 @@ const Select = ({
   placeholder,
   width = 200,
   error,
+  disabled,
   fullWidth,
   children,
 }: SelectProps) => {
@@ -46,6 +48,19 @@ const Select = ({
     if (fullWidth) return undefined;
     return width + 'px';
   };
+
+  if (disabled) {
+    return (
+      <Container style={{ width: setContainerWidth() }}>
+        <DisabledSelectContainer>
+          {value && <Value>{setValueLabel(value)}</Value>}
+          {!value && <Placeholder>{placeholder}</Placeholder>}
+          {open && <UpArrowIcon fill="gainsboro" />}
+          {!open && <DownArrowIcon fill="gainsboro" />}
+        </DisabledSelectContainer>
+      </Container>
+    );
+  }
 
   return (
     <>
@@ -91,6 +106,23 @@ const Background = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 1;
+`;
+
+const DisabledSelectContainer = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 25px 0 10px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  cursor: not-allowed;
+  background: whitesmoke;
+  position: relative;
+  z-index: 2;
+
+  & * {
+    color: gainsboro !important;
+  }
 `;
 
 const SelectContainer = styled.div`

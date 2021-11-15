@@ -39,6 +39,19 @@ function App() {
           <Option value="3">코틀린</Option>
         </Select>
       </p>
+      <p>
+        <Select
+          value={value}
+          onChange={handleChange}
+          placeholder="값을 선택하세요."
+          width={300}
+          disabled
+        >
+          <Option value="1">자바스크립트</Option>
+          <Option value="2">파이썬</Option>
+          <Option value="3">코틀린</Option>
+        </Select>
+      </p>
     </Container>
   );
 }
