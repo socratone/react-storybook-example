@@ -8,6 +8,7 @@ type SelectProps = {
   children: React.ReactElement<OptionProps>[];
   placeholder?: string;
   onChange: (value: string) => void;
+  error?: boolean;
   fullWidth?: boolean;
   width?: number;
 };
@@ -17,6 +18,7 @@ const Select = ({
   onChange,
   placeholder,
   width = 200,
+  error,
   fullWidth,
   children,
 }: SelectProps) => {
@@ -48,7 +50,10 @@ const Select = ({
   return (
     <>
       <Container style={{ width: setContainerWidth() }}>
-        <SelectContainer onClick={handleClickSelect}>
+        <SelectContainer
+          onClick={handleClickSelect}
+          style={{ borderColor: error ? 'red' : undefined }}
+        >
           {value && <Value>{setValueLabel(value)}</Value>}
           {!value && <Placeholder>{placeholder}</Placeholder>}
           {open && <UpArrowIcon fill="grey" />}
