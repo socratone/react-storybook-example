@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Container>
-      <p>
+      <div style={{ marginBottom: '10px' }}>
         <Select
           value={value}
           onChange={handleChange}
@@ -25,8 +25,8 @@ function App() {
             코틀린
           </Option>
         </Select>
-      </p>
-      <p>
+      </div>
+      <div style={{ marginBottom: '10px' }}>
         <Select
           value={value}
           onChange={handleChange}
@@ -39,8 +39,8 @@ function App() {
           <Option value="2">파이썬</Option>
           <Option value="3">코틀린</Option>
         </Select>
-      </p>
-      <p>
+      </div>
+      <div style={{ marginBottom: '10px' }}>
         <Select
           value={value}
           onChange={handleChange}
@@ -52,7 +52,7 @@ function App() {
           <Option value="2">파이썬</Option>
           <Option value="3">코틀린</Option>
         </Select>
-      </p>
+      </div>
     </Container>
   );
 }
