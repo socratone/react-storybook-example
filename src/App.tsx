@@ -20,7 +20,9 @@ function App() {
       >
         <Option value="1">자바스크립트</Option>
         <Option value="2">파이썬</Option>
-        <Option value="3">코틀린</Option>
+        <Option value="3" disabled>
+          코틀린
+        </Option>
       </Select>
     </Container>
   );

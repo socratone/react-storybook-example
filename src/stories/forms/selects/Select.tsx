@@ -56,9 +56,10 @@ const Select = ({
         </SelectContainer>
 
         {open && (
-          <Dropdown onClick={(event) => event.stopPropagation()}>
+          <Dropdown>
             {children.map((child) => (
               <child.type
+                {...child.props}
                 key={child.props.value}
                 onClick={() => handleClickOption(child.props.value)}
               >
