@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-type TextInputProps = {
+export type TextInputProps = {
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   name?: string;
