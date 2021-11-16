@@ -1,3 +1,4 @@
+import { ComponentStory } from '@storybook/react';
 import TextInput from './index';
 
 export default {
@@ -5,7 +6,9 @@ export default {
   title: 'TextInput',
 };
 
-const Template = (args) => <TextInput {...args} />;
+const Template: ComponentStory<typeof TextInput> = (args) => (
+  <TextInput {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
