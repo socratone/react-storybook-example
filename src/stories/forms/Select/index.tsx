@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { OptionProps } from './Option';
+import { OptionProps } from '../Option';
 import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg';
 
 type SelectProps = {

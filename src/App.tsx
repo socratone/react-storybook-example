@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Option from './stories/forms/selects/Option';
-import Select from './stories/forms/selects/Select';
-import TextInput from './stories/forms/selects/TextInput';
+import Option from './stories/forms/Option';
+import Select from './stories/forms/Select';
+import TextInput from './stories/forms/TextInput';
 
 function App() {
   const [value, setValue] = useState('');
