@@ -76,6 +76,7 @@ const TextInput = ({
 const Container = styled.div``;
 
 const Input = styled.input`
+  box-sizing: border-box;
   border: 1px solid gainsboro;
   border-radius: 10px;
   height: 50px;
