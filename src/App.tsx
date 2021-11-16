@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Option from './stories/forms/selects/Option';
 import Select from './stories/forms/selects/Select';
+import TextInput from './stories/forms/selects/TextInput';
 
 function App() {
   const [value, setValue] = useState('');
+  const [text, setText] = useState('');
 
   const handleChange = (value: string) => {
     setValue(value);
+  };
+
+  const handleChangeText = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
   };
 
   return (
@@ -52,6 +58,16 @@ function App() {
           <Option value="2">파이썬</Option>
           <Option value="3">코틀린</Option>
         </Select>
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <TextInput
+          value={text}
+          onChange={handleChangeText}
+          placeholder="값을 입력하세요."
+        />
+      </div>
+      <div style={{ marginBottom: '10px' }}>
+        <TextInput value={text} onChange={handleChangeText} disabled />
       </div>
     </Container>
   );
