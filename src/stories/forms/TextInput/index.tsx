@@ -10,7 +10,7 @@ export type TextInputProps = {
   placeholder?: string;
   width?: number;
   fullWidth?: boolean;
-  type?: React.HTMLInputTypeAttribute;
+  type?: 'password';
 };
 
 const TextInput = ({
