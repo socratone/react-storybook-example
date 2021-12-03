@@ -4,8 +4,14 @@ export type TextInputProps = {
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   name?: string;
+  /**
+   * true일 때 빨간색 테두리가 생긴다.
+   */
   error?: boolean;
-  errorMessage?: string;
+  /**
+   * input 아래에 빨간색 글자를 나타낸다.
+   */
+  errorText?: string;
   disabled?: boolean;
   placeholder?: string;
   width?: number;
@@ -13,12 +19,15 @@ export type TextInputProps = {
   type?: 'password';
 };
 
+/**
+ * 글자를 입력할 수 있는 input 입니다.
+ */
 const TextInput = ({
   value,
   onChange,
   name,
   error,
-  errorMessage,
+  errorText,
   disabled,
   placeholder,
   width = 200,
@@ -52,7 +61,7 @@ const TextInput = ({
           style={setInputStyle()}
         />
 
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+        {errorText && <ErrorText>{errorText}</ErrorText>}
       </Container>
     );
   }
@@ -68,7 +77,7 @@ const TextInput = ({
         style={setInputStyle()}
       />
 
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      {errorText && <ErrorText>{errorText}</ErrorText>}
     </Container>
   );
 };
@@ -79,8 +88,9 @@ const Input = styled.input`
   box-sizing: border-box;
   border: 1px solid gainsboro;
   border-radius: 10px;
-  height: 50px;
+  height: 40px;
   font-size: 16px;
+  color: #333;
   padding: 0 10px;
   width: 100%;
 
@@ -95,7 +105,7 @@ const DisabledInput = styled(Input)`
   cursor: not-allowed;
 `;
 
-const ErrorMessage = styled.div`
+const ErrorText = styled.div`
   margin-top: 5px;
   color: red;
   font-size: 14px;
