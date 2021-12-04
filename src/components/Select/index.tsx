@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { OptionProps } from '../Option';
-import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg';
+import { ReactComponent as ArrowIcon } from './arrow.svg';
 
 type SelectProps = {
   value: string;
@@ -113,7 +113,7 @@ const Background = styled.div`
 `;
 
 const DisabledSelectContainer = styled.div`
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   padding: 0 25px 0 10px;
@@ -130,7 +130,7 @@ const DisabledSelectContainer = styled.div`
 `;
 
 const SelectContainer = styled.div`
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   padding: 0 25px 0 10px;
@@ -192,7 +192,7 @@ const Placeholder = styled.div`
 `;
 
 const Value = styled.div`
-  color: black;
+  color: #333;
 `;
 
 export default Select;

@@ -30,7 +30,7 @@ Placeholder.args = {
 export const Width = Template.bind({});
 Width.args = {
   ...Default.args,
-  width: 100,
+  width: 300,
 };
 
 export const FullWidth = Template.bind({});

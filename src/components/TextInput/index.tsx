@@ -97,6 +97,10 @@ const Input = styled.input`
   &:focus {
     outline: none;
   }
+
+  &::placeholder {
+    color: grey;
+  }
 `;
 
 const DisabledInput = styled(Input)`
