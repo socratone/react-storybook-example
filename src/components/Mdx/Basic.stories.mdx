@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import Badge from './Badge';
+
+<Meta title="MDX Example/Basic" component={Badge} />
+
+# Basic
+
+`Badge` 컴포넌트 사용 방법
+
+## Color
+
+색을 변경할 수 있다.
+
+<Canvas>
+  <Story name="default color">
+    <Badge>DEFAULT</Badge>
+  </Story>
+  <Story name="blue color">
+    <Badge color="blue">BLUE</Badge>
+  </Story>
+  <Story name="red color">
+    <Badge color="red">RED</Badge>
+  </Story>
+  <Story name="yellow color">
+    <Badge color="yellow">YELLOW</Badge>
+  </Story>
+</Canvas>
+
+## Size
+
+크기를 변경할 수 있다.
+
+<Canvas>
+  <Story name="small size">
+    <Badge size="small">SIZE</Badge>
+  </Story>
+  <Story name="medium size">
+    <Badge size="medium">SIZE</Badge>
+  </Story>
+  <Story name="large size">
+    <Badge size="large">SIZE</Badge>
+  </Story>
+</Canvas>

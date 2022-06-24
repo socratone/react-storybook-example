@@ -1,0 +1,21 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import ToggleButton from './ToggleButton';
+
+export const args = {
+  children: 'CLICK',
+};
+
+<Meta title="MDX Example/State" component={ToggleButton} />
+
+# State
+
+<Canvas>
+  <Story name="state" args={args}>
+    {(args) => {
+      const [selected, setSelected] = React.useState(false);
+      return (
+        <ToggleButton {...args} selected={selected} onChange={setSelected} />
+      );
+    }}
+  </Story>
+</Canvas>

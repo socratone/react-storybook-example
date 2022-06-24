@@ -1,0 +1,40 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import TextCard from './TextCard';
+
+export const Template = (args) => <TextCard {...args} />;
+export const args = {
+  name: '홍길동',
+  age: 10,
+  gender: '남',
+};
+
+<Meta
+  title="MDX Example/Args Types"
+  argTypes={{
+    name: {
+      control: {
+        type: 'text',
+      },
+    },
+    age: {
+      control: {
+        type: 'number',
+      },
+    },
+    gender: {
+      control: {
+        type: 'radio',
+      },
+      options: ['남', '여'],
+    },
+  }}
+  component={TextCard}
+/>
+
+# Args Types
+
+<Canvas>
+  <Story name="text card" args={args}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
